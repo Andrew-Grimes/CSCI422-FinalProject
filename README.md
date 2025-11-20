@@ -2,15 +2,15 @@
 
 ## Project Overview
 
-This project is a redesigned web experience for the **Fraternity and Sorority Life (FSL)** section of the Colorado School of Mines SAIL website. The goal is to provide clear, centralized information about each Greek life chapter and key events (such as rush) for students interested in joining. :contentReference[oaicite:0]{index=0}
+This project is a redesigned web experience for the **Fraternity and Sorority Life (FSL)** section of the Colorado School of Mines SAIL website. The goal is to provide clear, centralized information about each Greek life chapter and key events (such as rush) for students interested in joining.
 
-The deliverable for this project is a **complete website demo** that the client can use as inspiration or integrate into their existing deployed site. The client does **not** plan to deploy this specific demo as-is. :contentReference[oaicite:1]{index=1}
+The deliverable for this project is a **complete website demo** that the client can use as inspiration or integrate into their existing deployed site. The client does **not** plan to deploy this specific demo as-is.
 
 ## Team
 
 - Owen Miller  
 - Vincent Nguyen  
-- Andrew Grimes :contentReference[oaicite:2]{index=2}  
+- Andrew Grimes 
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Students interested in Greek life need a straightforward way to:
 - Understand what each group offers and how they differ.
 - Find information about events such as **rush** and other FSL-related activities.
 
-The current experience is fragmented and not tailored specifically to these exploration needs. This project aims to design a focused FSL page that solves this problem through improved information architecture and UI/UX. :contentReference[oaicite:3]{index=3}
+The current experience is fragmented and not tailored specifically to these exploration needs. This project aims to design a focused FSL page that solves this problem through improved information architecture and UI/UX.
 
 ## Users & Context
 
@@ -32,7 +32,11 @@ The current experience is fragmented and not tailored specifically to these expl
 
 - The site is primarily **informational**.
 - Users browse to compare chapters, learn about events, and decide which organizations to engage with.
-- The page is expected to be accessed via the web, through the broader SAIL website. :contentReference[oaicite:4]{index=4}
+- The page is expected to be accessed via the web, through the broader SAIL website.
+
+## Figma Design
+
+- https://www.figma.com/design/C9Lqt0E1qCC59NHBRnIV9F/Final-Project--FSL-Page?node-id=0-1&p=f&t=61NzHq5qGPOhkkk7-0
 
 ## Definition of Done
 
