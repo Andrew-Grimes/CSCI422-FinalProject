@@ -47,14 +47,16 @@ function App() {
       setSelectedOrg(org);
       setPage('org');
     };
-
-
+    const handleLogoClick = () => { 
+      console.log('Clicked Logo'); 
+      setPage('home');
+    };
 
     return (
         <div className="app-shell">
             <header className="site-header">
                 <div className="header-left">
-                    <img src={minesFslLogo} alt="Colorado School of Mines Fraternity & Sorority Life" className="mines-logo"/>
+                    <img src={minesFslLogo} alt="Colorado School of Mines Fraternity & Sorority Life" className="mines-logo" onClick={() => handleLogoClick()}/>
                 </div>
                 <nav className="header-tabs" aria-label="Organization type selection">
                     <button type="button" className={selectedType === 'fraternity' ? 'tab-button tab-button--active' : 'tab-button'} onClick={() => setSelectedType('fraternity')}>Fraternities</button>
@@ -87,9 +89,8 @@ function App() {
             )}
             {page === 'org' && (
               <div className="org-detail">
-                <button onClick={() => setPage('home')}>Back</button>
-                <h1>test1</h1>
-                <p>test2</p>
+                <h1>{selectedOrg.name}</h1>
+                <p>{selectedOrg.letters}</p>
               </div>
             )}
         </div>
