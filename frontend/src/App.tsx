@@ -38,7 +38,17 @@ function getOrgImage(imageKey: string): string | undefined {
 function App() {
     const [selectedType, setSelectedType] = useState<OrgType>('fraternity');
     const filteredOrgs = organizations.filter((org) => org.type === selectedType);
-    const handleOrgClick = (org: Organization) => { console.log('Clicked:', org.name); };
+
+    const [page, setPage] = useState<'home' | 'org'>('home');
+    const [selectedOrg, setSelectedOrg] = useState<Organization>({});
+
+    const handleOrgClick = (org: Organization) => { 
+      console.log('Clicked:', org.name); 
+      setSelectedOrg(org);
+      setPage('org');
+    };
+
+
 
     return (
         <div className="app-shell">
@@ -51,28 +61,37 @@ function App() {
                     <button type="button" className={selectedType === 'sorority' ? 'tab-button tab-button--active' : 'tab-button'} onClick={() => setSelectedType('sorority')}>Sororities</button>
                 </nav>
             </header>
-            <main className="page-main">
-                <section className="org-section">
-                    <h1 className="section-title">{selectedType === 'fraternity' ? 'Fraternities' : 'Sororities'}</h1>
-                    <div className="org-grid">
-                        {filteredOrgs.map((org) => { const imageSrc = getOrgImage(org.imageKey);
-                            return (
-                                <div key={org.id} className="org-card-block">
-                                    <div className={imageSrc ? 'org-image-area has-image' : 'org-image-area'} style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined} role="button" tabIndex={0} aria-label={`${org.name} image`} onClick={() => handleOrgClick(org)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleOrgClick(org); }}}>
-                                        <div className="org-image-overlay-letters">{org.letters}</div>{!imageSrc && (<div className="org-image-placeholder-text">{org.name} Image</div>)}</div>
-                                    <button type="button" className="org-content" onClick={() => handleOrgClick(org)}>
-                                        <div className="org-content-text">
-                                            <span className="org-title">{org.name}</span>
-                                        </div>
-                                        <span className="org-content-arrow" aria-hidden="true">→</span>
-                                    </button>
-                                </div>
-                            );
-                        })}
-                        {filteredOrgs.length === 0 && (<p className="empty-state">No fraternities or sororities to show</p>)}
-                    </div>
-                </section>
-            </main>
+            {page === 'home' && (
+              <main className="page-main">
+                  <section className="org-section">
+                      <h1 className="section-title">{selectedType === 'fraternity' ? 'Fraternities' : 'Sororities'}</h1>
+                      <div className="org-grid">
+                          {filteredOrgs.map((org) => { const imageSrc = getOrgImage(org.imageKey);
+                              return (
+                                  <div key={org.id} className="org-card-block">
+                                      <div className={imageSrc ? 'org-image-area has-image' : 'org-image-area'} style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined} role="button" tabIndex={0} aria-label={`${org.name} image`} onClick={() => handleOrgClick(org)} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleOrgClick(org); }}}>
+                                          <div className="org-image-overlay-letters">{org.letters}</div>{!imageSrc && (<div className="org-image-placeholder-text">{org.name} Image</div>)}</div>
+                                      <button type="button" className="org-content" onClick={() => handleOrgClick(org)}>
+                                          <div className="org-content-text">
+                                              <span className="org-title">{org.name}</span>
+                                          </div>
+                                          <span className="org-content-arrow" aria-hidden="true">→</span>
+                                      </button>
+                                  </div>
+                              );
+                          })}
+                          {filteredOrgs.length === 0 && (<p className="empty-state">No fraternities or sororities to show</p>)}
+                      </div>
+                  </section>
+              </main>
+            )}
+            {page === 'org' && (
+              <div className="org-detail">
+                <button onClick={() => setPage('home')}>Back</button>
+                <h1>test1</h1>
+                <p>test2</p>
+              </div>
+            )}
         </div>
     );
 }
