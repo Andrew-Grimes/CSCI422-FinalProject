@@ -43,12 +43,12 @@ function App() {
     const [selectedOrg, setSelectedOrg] = useState<Organization>({});
 
     const handleOrgClick = (org: Organization) => { 
-      console.log('Clicked:', org.name); 
+      //console.log('Clicked:', org.name); 
       setSelectedOrg(org);
       setPage('org');
     };
     const handleLogoClick = () => { 
-      console.log('Clicked Logo'); 
+      //console.log('Clicked Logo'); 
       setPage('home');
     };
 
@@ -90,10 +90,26 @@ function App() {
               </main>
             )}
             {page === 'org' && (
-              <div className="org-detail">
-                <h1>{selectedOrg.name}</h1>
-                <p>{selectedOrg.letters}</p>
-              </div>
+              <main className="chapter-page">
+                <section className="chapter-main">
+                  <div className="chapter-greek-letters">{selectedOrg.letters}</div>
+                  <h1 className="chapter-title">{selectedOrg.name} | Delta Chapter</h1>
+                </section>
+                <aside className="chapter-links">
+                  <a href="#" className="chapter-link">
+                    About Us <span className="arrow">→</span>
+                  </a>
+                  <a href="#" className="chapter-link">
+                    Social Media <span className="arrow">→</span>
+                  </a>
+                  <a href="#" className="chapter-link">
+                    Philanthropies <span className="arrow">→</span>
+                  </a>
+                  <a href="#" className="chapter-link">
+                    Rush <span className="arrow">→</span>
+                  </a>
+                </aside>
+              </main>
             )}
         </div>
     );
