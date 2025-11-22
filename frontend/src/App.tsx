@@ -99,7 +99,7 @@ function App() {
                 <main className="chapter-page">
                   <section className="chapter-main">
                     <div className="chapter-greek-letters">{selectedOrg.letters}</div>
-                    <h1 className="chapter-title">{selectedOrg.name} | Delta Chapter</h1>
+                    <h1 className="chapter-title">{selectedOrg.name} | Colorado School of Mines</h1>
                   </section>
                   <aside className="chapter-links">
                     <a href="#" className="chapter-link">
