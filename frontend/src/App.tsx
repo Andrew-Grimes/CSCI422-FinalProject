@@ -58,10 +58,12 @@ function App() {
                 <div className="header-left">
                     <img src={minesFslLogo} alt="Colorado School of Mines Fraternity & Sorority Life" className="mines-logo" onClick={() => handleLogoClick()}/>
                 </div>
-                <nav className="header-tabs" aria-label="Organization type selection">
-                    <button type="button" className={selectedType === 'fraternity' ? 'tab-button tab-button--active' : 'tab-button'} onClick={() => setSelectedType('fraternity')}>Fraternities</button>
-                    <button type="button" className={selectedType === 'sorority' ? 'tab-button tab-button--active' : 'tab-button'} onClick={() => setSelectedType('sorority')}>Sororities</button>
-                </nav>
+                {page === 'home' && (
+                  <nav className="header-tabs" aria-label="Organization type selection">
+                      <button type="button" className={selectedType === 'fraternity' ? 'tab-button tab-button--active' : 'tab-button'} onClick={() => setSelectedType('fraternity')}>Fraternities</button>
+                      <button type="button" className={selectedType === 'sorority' ? 'tab-button tab-button--active' : 'tab-button'} onClick={() => setSelectedType('sorority')}>Sororities</button>
+                  </nav>
+                )}
             </header>
             {page === 'home' && (
               <main className="page-main">
