@@ -30,9 +30,31 @@ button {
   font-family: inherit;
 }
 
+.main-logo {
+  width: 100%;
+  height: auto;
+  max-height: 50vh; 
+  object-fit: cover; 
+  display: block; 
+}
+
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 80vh;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
 .chapter-page {
   position: relative;
   padding: 40px 60px;
+
 }
 
 .chapter-main {
